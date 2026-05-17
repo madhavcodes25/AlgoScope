@@ -34,7 +34,7 @@ const KadaneVisualizerPage = lazy(
 )
 
 const MooreVotingVisualizerPage = lazy(
-  () => import('./components/mooresVotingAlgo/VisualizerPage')
+  () => import('./components/mooreVotingAlgo/VisualizerPage')
 )
 
 const PracticePage = lazy(() => import('./components/PracticePage'))
