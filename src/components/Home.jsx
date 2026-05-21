@@ -7,7 +7,7 @@ import GraphAlgoImg from '../assets/new-home-images/shortestPath.png'
 import KadaneImg from '../assets/new-home-images/KadaneImg.png'
 import MooreVotingImg from '../assets/new-home-images/MooreVoting.png'
 import { MathSoloVisualizer } from './MathTheory/MathSoloVisualizer'
-import BacktrackingImg from "../assets/new-home-images/KadaneImg.png"
+import BacktrackingImg from "../assets/new-home-images/BacktrackingImg.png"
 import adt from '../assets/new-home-images/adt.png'
 import { motion } from 'framer-motion'
 
