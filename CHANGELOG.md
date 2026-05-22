@@ -5,6 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0](https://github.com/algoscope-hq/AlgoScope/compare/v1.6.1...v1.7.0) (2026-05-22)
+
+
+### Features
+
+* add code download functionality to sandbox editor ([6ab37e5](https://github.com/algoscope-hq/AlgoScope/commit/6ab37e58ef51c1f3a60b2c181ff33f98ab756bda))
+* add download button for code snippets ([8432b97](https://github.com/algoscope-hq/AlgoScope/commit/8432b97c2d9e46203ef656ba63f9360d5b0c500a))
+* add grid-based shortest path visualizer ([0aeb0be](https://github.com/algoscope-hq/AlgoScope/commit/0aeb0bed80c523df9419227b18ebea0abd774b55))
+* add grid-specific shortest path source implementations ([3f1073a](https://github.com/algoscope-hq/AlgoScope/commit/3f1073a4fe75debb6418520caa8f850fa5a8a6ea))
+* add grid-specific shortest path source implementations ([3370768](https://github.com/algoscope-hq/AlgoScope/commit/3370768fb7d5c44b90c10d9f2955a52da3459c70))
+* add session history panel for recent algorithms ([5d9354f](https://github.com/algoscope-hq/AlgoScope/commit/5d9354fea753720d98d9d812ed3013ae0656482f))
+* add speed and language controls to MathSoloVisualizer ([e4f06e5](https://github.com/algoscope-hq/AlgoScope/commit/e4f06e5b3520db7d9891b0740f0a06a2fe1b889f))
+* Added N-queens and Sudoku solving algorithms ([7a5557f](https://github.com/algoscope-hq/AlgoScope/commit/7a5557f98015a98f45495b5327af225a59e7fe22))
+* implement dual execution comparison mode in practice sandbox ([ef18a26](https://github.com/algoscope-hq/AlgoScope/commit/ef18a268f83e16909253ef10769690bd1de31315))
+* Improve Footer Section Design, Layout, and Responsiveness ([a044f4f](https://github.com/algoscope-hq/AlgoScope/commit/a044f4f4b6f0b497e1255013c1f64d3e4c541da0))
+* improve sign-in page UI and accessibility ([754e42f](https://github.com/algoscope-hq/AlgoScope/commit/754e42f1dcc45b95fc2d49be57f6123e27015bad))
+* **playback:** implement step backward functionality in visualizers ([792c9f3](https://github.com/algoscope-hq/AlgoScope/commit/792c9f3d03f80248eaf2f1e7add83b85144c6341))
+
+
+### Bug Fixes
+
+* add missing Math Theory to search and explore bar ([2a00296](https://github.com/algoscope-hq/AlgoScope/commit/2a00296f06c279e6159c0d284ff2edf70d220435))
+* Added sort dropdown to search results ([5c118db](https://github.com/algoscope-hq/AlgoScope/commit/5c118db1028a199c3ef07bea821929d1f6eb6fba))
+* format ([eaeac77](https://github.com/algoscope-hq/AlgoScope/commit/eaeac7751a0639e696261c72dad972c0cebd49fd))
+* format ([129b921](https://github.com/algoscope-hq/AlgoScope/commit/129b92184b92939d87e7739683ebb4e3add25a74))
+* improve grid shortest path implementations ([701cabb](https://github.com/algoscope-hq/AlgoScope/commit/701cabbcb674fc903d840c8978e8dea1f0cddbdc))
+* improve keyboard accessibility for algorithm cards ([4bd8c39](https://github.com/algoscope-hq/AlgoScope/commit/4bd8c39774f8749d5f9e89bd894ad985e70c5e98))
+* improve session history stability ([9638e97](https://github.com/algoscope-hq/AlgoScope/commit/9638e97ab148ac8692fa258f4251ef7b6584ef61))
+* introduced Math Theory description along with visualisation ([bf190db](https://github.com/algoscope-hq/AlgoScope/commit/bf190dbf09c303411bcb2cc722ee78e184b8fac7))
+* remove unused floyd-warshall parameter ([8907d7a](https://github.com/algoscope-hq/AlgoScope/commit/8907d7ad7e92c53fa2679eb4cb8118be1330577b))
+* resolve grid visualizer review issues ([cd80b7e](https://github.com/algoscope-hq/AlgoScope/commit/cd80b7ed641f3fc69237b291d5ea60c3e8bf19ef))
+* resolve lint issues in grid visualizer ([b3a1738](https://github.com/algoscope-hq/AlgoScope/commit/b3a1738e0507142ed147ad62136fd3f63bf2362c))
+* resolve linting issues in Navbar (cascading renders and missing dependencies) ([c801111](https://github.com/algoscope-hq/AlgoScope/commit/c80111150ad287171b4359cea2ed5af7f1732748))
+* resolve navbar hook dependency warning ([e9a29dc](https://github.com/algoscope-hq/AlgoScope/commit/e9a29dcaf7882f7e06229690074463470a535bcf))
+* stabilize grid visualizer interactions ([124f2b6](https://github.com/algoscope-hq/AlgoScope/commit/124f2b62923b60b115b69db1f55e3485a22f68f0))
+* **ui:** fixed the bug where the size decreased when clicked ([c374c0b](https://github.com/algoscope-hq/AlgoScope/commit/c374c0b128911c52575a32573d0e21b897a0b83d))
+* **ui:** Search bar put in the center ([ff80450](https://github.com/algoscope-hq/AlgoScope/commit/ff804500281f954d1f31a95a96863729e9df4c0a))
+
 ## [1.6.1](https://github.com/algoscope-hq/AlgoScope/compare/v1.6.0...v1.6.1) (2026-05-18)
 
 ### Bug Fixes
