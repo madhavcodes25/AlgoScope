@@ -58,7 +58,7 @@ export function Hero() {
               Algorithms,
               <br />
               <span className="text-zinc-500">made </span>
-              <span className="text-white [text-shadow:0_0_40px_rgba(255,255,255,0.08)]">
+              <span className="text-zinc-900 dark:text-white dark:[text-shadow:0_0_40px_rgba(255,255,255,0.08)]">
                 visible
               </span>
             </motion.h1>
