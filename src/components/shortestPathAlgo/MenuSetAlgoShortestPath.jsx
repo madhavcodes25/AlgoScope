@@ -49,8 +49,8 @@ export const MenuSetAlgoShortestPath = ({ algorithm, setAlgorithm }) => {
             <option value="dijkstra">Dijkstra</option>
             <option value="bellmanford">Bellman-Ford</option>
             <option value="floydwarshall">Floyd–Warshall</option>
-            <option value="prim">Prim's MST</option>
-            <option value="kruskal">Kruskal's MST</option>
+            <option value="prim">Prim&apos;s MST</option>
+            <option value="kruskal">Kruskal&apos;s MST</option>
           </select>
         </Tooltip>
         <svg

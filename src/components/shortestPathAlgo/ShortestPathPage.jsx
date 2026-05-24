@@ -18,17 +18,20 @@ export const ShortestPathPage = () => {
 
   const [viewMode, setViewMode] = React.useState('network')
 
-  const setMode = (newMode) => {
-    const newParams = new URLSearchParams(searchParams)
+  const setMode = React.useCallback(
+    (newMode) => {
+      const newParams = new URLSearchParams(searchParams)
 
-    if (newMode === 'compare') {
-      newParams.set('mode', 'compare')
-    } else {
-      newParams.delete('mode')
-    }
+      if (newMode === 'compare') {
+        newParams.set('mode', 'compare')
+      } else {
+        newParams.delete('mode')
+      }
 
-    setSearchParams(newParams)
-  }
+      setSearchParams(newParams)
+    },
+    [searchParams, setSearchParams]
+  )
 
   const [algorithm, setAlgorithm] = React.useState(null)
   const [source, setSource] = React.useState(null)
@@ -104,7 +107,7 @@ export const ShortestPathPage = () => {
       if (viewMode === 'grid') setViewMode('network')
       if (mode === 'compare') setMode('solo')
     }
-  }, [algorithm, viewMode, mode])
+  }, [algorithm, viewMode, mode, setMode])
 
   return (
     <motion.div

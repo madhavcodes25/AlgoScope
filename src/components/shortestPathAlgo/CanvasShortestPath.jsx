@@ -148,6 +148,16 @@ export const CanvasShortestPath = ({
     })
   }
 
+  const getIdleStatusMessage = () => {
+    if (!algorithm) return 'Select an algorithm to start visualization.'
+    if (algorithm === 'kruskal') return "Press Run to start Kruskal's MST."
+    if (algorithm === 'prim') {
+      return "Select a start node to run Prim's MST."
+    }
+
+    return 'Select source and target to start visualization.'
+  }
+
   // Animate — only fires when runKey changes
   useEffect(() => {
     resetStyles()
@@ -624,10 +634,7 @@ export const CanvasShortestPath = ({
       </div>
       <StatusDisplay
         key={status || 'default-status'}
-        message={
-          status ||
-          'Select algorithm, source, and target to start visualization.'
-        }
+        message={status || getIdleStatusMessage()}
       />
     </div>
   )

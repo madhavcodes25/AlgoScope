@@ -34,7 +34,8 @@ export const MenuSelectNodesShortestPath = ({
           Source &amp; Target
         </h3>
         <div className="bg-slate-950/40 border border-white/5 rounded-xl p-3 text-slate-400 text-xs text-center font-medium">
-          No source or target selection required for Kruskal's MST algorithm.
+          No source or target selection required for Kruskal&apos;s MST
+          algorithm.
         </div>
       </div>
     )
