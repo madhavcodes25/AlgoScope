@@ -130,6 +130,17 @@ export const CanvasShortestPath = ({
     }
   }, [physics])
 
+  useEffect(() => {
+    if (!networkRef.current) return
+
+    const isMST = algorithm === 'prim' || algorithm === 'kruskal'
+    networkRef.current.setOptions({
+      edges: {
+        arrows: { to: { enabled: !isMST, scaleFactor: 0.8 } },
+      },
+    })
+  }, [algorithm])
+
   const resetStyles = () => {
     if (!nodesRef.current || !edgesRef.current) return
     nodesRef.current.get().forEach((n) => {
