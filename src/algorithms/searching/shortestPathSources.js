@@ -747,6 +747,7 @@ void floyd_warshall(int R, int C, int grid[100][100], int** dist) {
   const key = {};
   const mstSet = {};
   const nodes = Object.keys(graph);
+  if (nodes.length === 0) return { parent, key };
   for (const node of nodes) {
     key[node] = Infinity;
     mstSet[node] = false;
