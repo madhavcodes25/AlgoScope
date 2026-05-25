@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Home, ArrowLeft, Terminal } from "lucide-react";
+import { useEffect, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { Home, ArrowLeft, Terminal } from 'lucide-react'
 
 const glitchKeyframes = `
 @keyframes glitch-1 {
@@ -35,34 +35,34 @@ const glitchKeyframes = `
   97%            { opacity: 1; }
   98%            { opacity: 0.6; }
 }
-`;
+`
 
 const codeLines = [
-  { text: "> initializing route resolver...", delay: 0 },
-  { text: "  scanning algorithm registry...", delay: 0.3 },
-  { text: "  checking nested paths...", delay: 0.6 },
-  { text: "  [ERR] route not found: 0x404", delay: 0.9, error: true },
-  { text: "  [ERR] null pointer → /this-path", delay: 1.1, error: true },
-  { text: "  fallback handler triggered", delay: 1.4, warn: true },
-];
+  { text: '> initializing route resolver...', delay: 0 },
+  { text: '  scanning algorithm registry...', delay: 0.3 },
+  { text: '  checking nested paths...', delay: 0.6 },
+  { text: '  [ERR] route not found: 0x404', delay: 0.9, error: true },
+  { text: '  [ERR] null pointer → /this-path', delay: 1.1, error: true },
+  { text: '  fallback handler triggered', delay: 1.4, warn: true },
+]
 
 export default function NotFound() {
-  const navigate = useNavigate();
-  const canvasRef = useRef(null);
+  const navigate = useNavigate()
+  const canvasRef = useRef(null)
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const canvas = canvasRef.current
+    if (!canvas) return
 
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
+    }
 
-    resize();
+    resize()
 
     const particles = Array.from({ length: 40 }, () => ({
       x: Math.random() * canvas.width,
@@ -71,38 +71,38 @@ export default function NotFound() {
       speedX: (Math.random() - 0.5) * 0.4,
       speedY: (Math.random() - 0.5) * 0.4,
       opacity: Math.random() * 0.5 + 0.1,
-    }));
+    }))
 
-    let animId;
+    let animId
 
     const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       particles.forEach((p) => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(34, 211, 238, ${p.opacity})`;
-        ctx.fill();
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(34, 211, 238, ${p.opacity})`
+        ctx.fill()
 
-        p.x += p.speedX;
-        p.y += p.speedY;
+        p.x += p.speedX
+        p.y += p.speedY
 
-        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-      });
+        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1
+        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1
+      })
 
-      animId = requestAnimationFrame(draw);
-    };
+      animId = requestAnimationFrame(draw)
+    }
 
-    draw();
+    draw()
 
-    window.addEventListener("resize", resize);
+    window.addEventListener('resize', resize)
 
     return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+      cancelAnimationFrame(animId)
+      window.removeEventListener('resize', resize)
+    }
+  }, [])
 
   return (
     <>
@@ -121,7 +121,7 @@ export default function NotFound() {
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(34,211,238,0.015) 2px, rgba(34,211,238,0.015) 4px)",
+              'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(34,211,238,0.015) 2px, rgba(34,211,238,0.015) 4px)',
           }}
         />
 
@@ -129,22 +129,21 @@ export default function NotFound() {
           className="absolute left-0 right-0 h-px pointer-events-none"
           style={{
             background:
-              "linear-gradient(90deg, transparent, rgba(34,211,238,0.4), transparent)",
-            animation: "scanline 6s linear infinite",
+              'linear-gradient(90deg, transparent, rgba(34,211,238,0.4), transparent)',
+            animation: 'scanline 6s linear infinite',
           }}
         />
 
         <div className="relative z-10 flex flex-col items-center gap-6 px-6 max-w-2xl w-full">
-
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs"
             style={{
-              borderColor: "rgba(34,211,238,0.3)",
-              color: "rgba(34,211,238,0.8)",
-              background: "rgba(34,211,238,0.05)",
+              borderColor: 'rgba(34,211,238,0.3)',
+              color: 'rgba(34,211,238,0.8)',
+              background: 'rgba(34,211,238,0.05)',
             }}
           >
             <Terminal size={12} />
@@ -153,14 +152,14 @@ export default function NotFound() {
 
           <div
             className="relative"
-            style={{ animation: "flicker 8s infinite" }}
+            style={{ animation: 'flicker 8s infinite' }}
           >
             <h1
               className="text-[120px] font-bold leading-none tracking-tighter"
               style={{
-                color: "#22d3ee",
+                color: '#22d3ee',
                 fontFamily: "'Geist Mono', monospace",
-                textShadow: "0 0 20px rgba(34,211,238,0.5)",
+                textShadow: '0 0 20px rgba(34,211,238,0.5)',
               }}
             >
               404
@@ -170,9 +169,9 @@ export default function NotFound() {
               aria-hidden="true"
               className="absolute inset-0 text-[120px] font-bold leading-none tracking-tighter"
               style={{
-                color: "#f43f5e",
+                color: '#f43f5e',
                 fontFamily: "'Geist Mono', monospace",
-                animation: "glitch-1 3.5s infinite",
+                animation: 'glitch-1 3.5s infinite',
                 opacity: 0.7,
               }}
             >
@@ -183,9 +182,9 @@ export default function NotFound() {
               aria-hidden="true"
               className="absolute inset-0 text-[120px] font-bold leading-none tracking-tighter"
               style={{
-                color: "#818cf8",
+                color: '#818cf8',
                 fontFamily: "'Geist Mono', monospace",
-                animation: "glitch-2 3.5s infinite",
+                animation: 'glitch-2 3.5s infinite',
                 opacity: 0.7,
               }}
             >
@@ -201,14 +200,14 @@ export default function NotFound() {
           >
             <p
               className="text-xl font-medium mb-1"
-              style={{ color: "var(--color-text-primary, #f1f5f9)" }}
+              style={{ color: 'var(--color-text-primary, #f1f5f9)' }}
             >
               Page not found
             </p>
 
             <p
               className="text-sm"
-              style={{ color: "var(--color-text-secondary, #94a3b8)" }}
+              style={{ color: 'var(--color-text-secondary, #94a3b8)' }}
             >
               This route doesn&apos;t exist in the algorithm registry.
             </p>
@@ -220,14 +219,14 @@ export default function NotFound() {
             transition={{ delay: 0.5 }}
             className="w-full rounded-xl p-4 text-xs text-left"
             style={{
-              background: "rgba(15,23,42,0.8)",
-              border: "0.5px solid rgba(34,211,238,0.2)",
+              background: 'rgba(15,23,42,0.8)',
+              border: '0.5px solid rgba(34,211,238,0.2)',
               fontFamily: "'Geist Mono', monospace",
             }}
           >
             <div
               className="flex items-center gap-2 mb-3 pb-2"
-              style={{ borderBottom: "0.5px solid rgba(34,211,238,0.1)" }}
+              style={{ borderBottom: '0.5px solid rgba(34,211,238,0.1)' }}
             >
               <div className="w-2.5 h-2.5 rounded-full bg-red-500 opacity-80" />
               <div className="w-2.5 h-2.5 rounded-full bg-yellow-500 opacity-80" />
@@ -235,7 +234,7 @@ export default function NotFound() {
 
               <span
                 className="ml-2 text-xs"
-                style={{ color: "rgba(34,211,238,0.4)" }}
+                style={{ color: 'rgba(34,211,238,0.4)' }}
               >
                 terminal
               </span>
@@ -250,10 +249,10 @@ export default function NotFound() {
                 className="leading-6"
                 style={{
                   color: line.error
-                    ? "#f87171"
+                    ? '#f87171'
                     : line.warn
-                    ? "#fbbf24"
-                    : "rgba(34,211,238,0.7)",
+                      ? '#fbbf24'
+                      : 'rgba(34,211,238,0.7)',
                 }}
               >
                 {line.text}
@@ -261,8 +260,8 @@ export default function NotFound() {
                 {i === codeLines.length - 1 && (
                   <span
                     style={{
-                      animation: "cursor-blink 1s step-end infinite",
-                      color: "#22d3ee",
+                      animation: 'cursor-blink 1s step-end infinite',
+                      color: '#22d3ee',
                     }}
                   >
                     _
@@ -282,8 +281,8 @@ export default function NotFound() {
               to="/"
               className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
-                background: "#22d3ee",
-                color: "#0f172a",
+                background: '#22d3ee',
+                color: '#0f172a',
                 fontFamily: "'Geist Mono', monospace",
               }}
             >
@@ -293,15 +292,13 @@ export default function NotFound() {
 
             <button
               onClick={() =>
-                window.history.length > 1
-                  ? navigate(-1)
-                  : navigate("/")
+                window.history.length > 1 ? navigate(-1) : navigate('/')
               }
               className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
-                background: "transparent",
-                color: "rgba(34,211,238,0.8)",
-                border: "0.5px solid rgba(34,211,238,0.3)",
+                background: 'transparent',
+                color: 'rgba(34,211,238,0.8)',
+                border: '0.5px solid rgba(34,211,238,0.3)',
                 fontFamily: "'Geist Mono', monospace",
               }}
             >
@@ -309,9 +306,8 @@ export default function NotFound() {
               Go back
             </button>
           </motion.div>
-
         </div>
       </div>
     </>
-  );
+  )
 }
