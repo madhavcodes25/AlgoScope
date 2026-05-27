@@ -155,9 +155,10 @@ export const MathSoloVisualizer = () => {
                 clear()
               }}
               className={`w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200
-                ${algo === t.key
-                  ? 'bg-cyan-500/20 border border-cyan-500/40 text-cyan-300'
-                  : 'bg-slate-800/60 border border-transparent text-slate-400 hover:text-white hover:bg-slate-700/60'
+                ${
+                  algo === t.key
+                    ? 'bg-cyan-500/20 border border-cyan-500/40 text-cyan-300'
+                    : 'bg-slate-800/60 border border-transparent text-slate-400 hover:text-white hover:bg-slate-700/60'
                 }`}
             >
               {t.label}
