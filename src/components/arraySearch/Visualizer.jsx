@@ -178,9 +178,7 @@ export default function Visualizer() {
     if (parsed.length === 0) return
 
     const nextArray =
-      algorithm === 'binarySearch'
-        ? [...parsed].sort((a, b) => a - b)
-        : parsed
+      algorithm === 'binarySearch' ? [...parsed].sort((a, b) => a - b) : parsed
 
     clearPlayback()
     setBaseArray(nextArray)
