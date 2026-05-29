@@ -8,6 +8,15 @@ export const CanvasMooreVoting = ({ numbers, speed }) => {
   const [status, setStatus] = useState('Enter array and start visualization.')
 
   useEffect(() => {
+    setActiveIndex(-1)
+    setCandidate(null)
+    setCount(0)
+    setStatus(
+      numbers.length
+        ? 'Starting visualization...'
+        : 'Enter array and start visualization.'
+    )
+
     if (!numbers.length) {
       return
     }

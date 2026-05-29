@@ -58,8 +58,7 @@ const PageLoader = () => (
   </div>
 )
 
-function App() {
-  const route = createBrowserRouter([
+const router = createBrowserRouter([
     {
       path: '/',
       element: (
@@ -197,7 +196,8 @@ function App() {
     },
   ])
 
-  return <RouterProvider router={route} />
+function App() {
+  return <RouterProvider router={router} />
 }
 
 export default App

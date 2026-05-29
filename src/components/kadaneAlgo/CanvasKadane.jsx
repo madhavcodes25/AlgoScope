@@ -9,6 +9,16 @@ export const CanvasKadane = ({ numbers, speed }) => {
   const [status, setStatus] = useState('Enter array and start visualization.')
 
   useEffect(() => {
+    setActiveIndex(-1)
+    setCurrentSum(0)
+    setMaxSum(0)
+    setBestRange([0, 0])
+    setStatus(
+      numbers.length
+        ? 'Starting visualization...'
+        : 'Enter array and start visualization.'
+    )
+
     if (!numbers.length) {
       return
     }
