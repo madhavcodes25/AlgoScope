@@ -108,6 +108,7 @@ const algorithmLinks = [
   { name: 'Dynamic Programming', href: '/dynamic-programming' },
   { name: 'Practice Sandbox', href: '/practice' },
   { name: 'Guess the Algorithm', href: '/challenge' },
+  { name: 'DP Optimization Journey', href: '/dp-journey' },
 ]
 
 export const Navbar = () => {
