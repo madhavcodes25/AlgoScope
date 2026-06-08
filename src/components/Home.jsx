@@ -140,7 +140,7 @@ const OPERATING_SYSTEMS = [
     color: 'theme-card border-emerald-500/30 hover:border-emerald-400',
     link: '/operating-systems',
     difficulty: 'Intermediate',
-  },
+  },  
 ]
 
 export const Home = () => {
