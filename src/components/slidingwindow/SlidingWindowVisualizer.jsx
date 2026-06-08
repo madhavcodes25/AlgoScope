@@ -868,7 +868,7 @@ export default function SlidingWindowVisualizer() {
       await navigator.clipboard.writeText(code.src.join('\n'))
       setCopied(true)
       setTimeout(() => setCopied(false), 1200)
-    } catch (_e) {
+    } catch {
       /* clipboard blocked in sandbox */
     }
   }
